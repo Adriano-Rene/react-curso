@@ -1,0 +1,20 @@
+{
+    "alunos": [
+      {
+        "id": 1,
+        "nome": "carlos adriano",
+        "rgm": 123,
+        "turma": 1,
+        "nota1": 10,
+        "nota2": 8
+      },
+      {
+        "id": 2,
+        "nome": "henrique ferreira",
+        "rgm": 321,
+        "turma": 2,
+        "nota1": 5,
+        "nota2": 7
+      }
+    ]
+  }
