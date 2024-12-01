@@ -4,13 +4,13 @@ import Main from '../template/Main'
 
 const headerProps = {
     icon: 'users',
-    title: 'Usuarios',
-    subtitle: 'crud comeca aqui incluir listar alterar e excluir'
+    title: 'Alunos',
+    subtitle: 'crud'
 }
 
 const baseUrl = 'http://localhost:3001/users'
 const initialState = {
-    user: { name: '', email: '' },
+    user: { name: '', rgm: '', turma: '', nota1: '', nota2: '' },
     list: []
 }
 
@@ -70,14 +70,49 @@ export default class UserCrud extends Component {
 
                     <div className="col-12 col-md-6">
                         <div className="form-group">
-                            <label>E-mail</label>
+                            <label>RGM</label>
                             <input type="text" className="form-control"
-                                name="email"
-                                value={this.state.user.email}
+                                name="rgm"
+                                value={this.state.user.rgm}
                                 onChange={e => this.updateField(e)}
-                                placeholder="Digite o e-mail..." />
+                                placeholder="Digite o RGM..." />
                         </div>
                     </div>
+
+                    <div className="col-12 col-md-6">
+                        <div className="form-group">
+                            <label>Turma</label>
+                            <input type="text" className="form-control"
+                                name="turma"
+                                value={this.state.user.turma}
+                                onChange={e => this.updateField(e)}
+                                placeholder="Digite a turma..." />
+                        </div>
+                    </div>
+
+                    <div className="col-12 col-md-6">
+                        <div className="form-group">
+                            <label>Nota1</label>
+                            <input type="text" className="form-control"
+                                name="nota1"
+                                value={this.state.user.nota1}
+                                onChange={e => this.updateField(e)}
+                                placeholder="Digite a primeira nota..." />
+                        </div>
+                    </div>
+
+                    <div className="col-12 col-md-6">
+                        <div className="form-group">
+                            <label>Nota2</label>
+                            <input type="text" className="form-control"
+                                name="nota2"
+                                value={this.state.user.nota2}
+                                onChange={e => this.updateField(e)}
+                                placeholder="Digite a segunda nota..." />
+                        </div>
+                    </div>
+
+                   
                 </div>
 
                 <hr />
@@ -116,7 +151,10 @@ export default class UserCrud extends Component {
                     <tr>
                         <th>ID</th>
                         <th>Nome</th>
-                        <th>E-mail</th>
+                        <th>RGM</th>
+                        <th>Turma</th>
+                        <th>Nota1</th>
+                        <th>Nota2</th>
                         <th>Ações</th>
                     </tr>
                 </thead>
@@ -133,7 +171,10 @@ export default class UserCrud extends Component {
                 <tr key={user.id}>
                     <td>{user.id}</td>
                     <td>{user.name}</td>
-                    <td>{user.email}</td>
+                    <td>{user.rgm}</td>
+                    <td>{user.turma}</td>
+                    <td>{user.nota1}</td>
+                    <td>{user.nota2}</td>
                     <td>
                         <button className="btn btn-warning"
                             onClick={() => this.load(user)}>
